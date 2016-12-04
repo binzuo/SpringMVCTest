@@ -12,11 +12,10 @@
     <title>home page</title>
 </head>
 <body>
-<%--在地址栏里直接输入localhost:8080/home.jsp不能直接访问主页 --%>
-<c:if test="${sessionScope.email eq null}">
-    <c:redirect url="index.jsp"/>
+<c:if test="${sessionScope.user eq null}">
+    <c:redirect url="${ctx}/index.jsp"/>
 </c:if>
-${sessionScope.welcome}
+${sessionScope.user}
 <h1>南无地藏菩萨摩诃萨</h1>
 <h1>南无本师释迦牟尼佛</h1>
 <h1>南无观世音菩萨摩诃萨</h1>
@@ -58,7 +57,7 @@ ${sessionScope.welcome}
 
 
 <hr>
-<a href="/user/logout">log out</a>
+<a href="${ctx}user/logout">log out</a>
 
 
 </body>
