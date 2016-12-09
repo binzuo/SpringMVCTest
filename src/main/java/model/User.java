@@ -1,7 +1,5 @@
 package model;
-
 import java.io.Serializable;
-
 /**
  * Created by Administrator on 2016/12/3 0003.
  */

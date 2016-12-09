@@ -7,4 +7,12 @@ CREATE TABLE test.user (
   email VARCHAR(255),
   password VARCHAR(255)
 );
-SELECT * FROM test.user
+DROP TABLE IF EXISTS test.book;
+CREATE TABLE test.book(
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  bookTitle VARCHAR(255),
+  author VARCHAR(255),
+  publishing VARCHAR(255)
+);
+SELECT *FROM test.user;
+SELECT *FROM test.book;
