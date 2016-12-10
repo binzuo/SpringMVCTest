@@ -49,8 +49,8 @@ ${sessionScope.user}
             <td>${book.bookTitle}</td>
             <td>${book.author}</td>
             <td>${book.publishing}</td>
-            <td><a href="${ctx}/book?action=search&id=${book.id}">修改</a></td>
-            <td><a href="${ctx}/book?action=remove&id=${book.id}">删除</a></td>
+            <td><a href="${ctx}book/search/${book.id}">修改</a></td>
+            <td><a href="${ctx}book/remove/${book.id}">删除</a></td>
         </tr>
     </c:forEach>
 

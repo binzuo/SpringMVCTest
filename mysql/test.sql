@@ -13,6 +13,8 @@ CREATE TABLE test.book(
   bookTitle VARCHAR(255),
   author VARCHAR(255),
   publishing VARCHAR(255)
+
 );
 SELECT *FROM test.user;
 SELECT *FROM test.book;
+DESC test.book;
