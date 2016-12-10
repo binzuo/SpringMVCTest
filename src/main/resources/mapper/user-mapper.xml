@@ -9,4 +9,9 @@
     <select id="login" parameterType="model.User" resultType="model.User">
         SELECT * FROM test.user WHERE email = #{email} AND password = #{password}
     </select>
+    <select id="queryUserByEmail" parameterType="model.User" resultType="model.User">
+        SELECT *
+        FROM test.user
+        WHERE email = #{email}
+    </select>
 </mapper>

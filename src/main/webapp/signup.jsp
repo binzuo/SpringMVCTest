@@ -17,6 +17,7 @@
     <input type="password" name="password" placeholder="PASSWORD" value="123" ><br>
     <input type="submit" value="sign up">
 </form>
+${requestScope.prompt}
 
 </body>
 </html>

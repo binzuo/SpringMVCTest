@@ -5,8 +5,8 @@ import model.User;
 /**
  * Created by Administrator on 2016/12/10.
  */
-public interface UseDao {
+public interface UserDao {
     void create(User user);
-    User login(User user);
+    User query(String statement,User user);
 
 }

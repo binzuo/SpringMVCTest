@@ -1,13 +1,13 @@
-package dao;
+package service;
 
 import model.Book;
 
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/12/10.
+ * Created by Administrator on 2016/12/10 0010.
  */
-public interface BookDao {
+public interface BookService {
     void create(Book book) ;
     List<Book> queryAll();
 

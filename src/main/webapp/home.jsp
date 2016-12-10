@@ -27,7 +27,7 @@ ${sessionScope.user}
 <h1>南无日光遍照菩萨</h1>
 <h1>南无坚净信菩萨摩诃萨</h1>
 <hr>
-<form action="${ctx}book/add" method="post">
+<form action="${ctx}book/create" method="post">
     <input type="text" name="bookTitle" placeholder="书名"><br>
     <input type="text" name="author" placeholder="作者"><br>
     <input type="text" name="publishing" placeholder="出版社"><br>

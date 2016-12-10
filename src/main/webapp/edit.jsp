@@ -12,7 +12,7 @@
     <title>edit page</title>
 </head>
 <body>
-<form action="${ctx}book/update" method="post">
+<form action="${ctx}book/modify" method="post">
     <input type="hidden" name="id" value="${sessionScope.book.id}">
     <input type="text" name="bookTitle" placeholder="BOOKTITLE" value="${sessionScope.book.bookTitle}"><br>
     <input type="text" name="author" placeholder="AUTHOR" value="${sessionScope.book.author}"><br>

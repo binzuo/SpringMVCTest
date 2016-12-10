@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import service.BookService;
 
 import java.util.List;
 
@@ -17,42 +18,66 @@ import java.util.List;
 @Controller
 @RequestMapping("book")
 public class BookController extends BaseController {
-   // @Autowired
-   // private SqlSession sqlSession;
+//    @Autowired
+//    private SqlSession sqlSession;
+//---------------------------------------------------------
     @Autowired
-    //@Qualifier("bookDaoJdbcImpl")
+//    @Qualifier("bookDaoJdbcImpl")
     private BookDao bookDao;
-    @RequestMapping("add")
-    private String add(Book book){
-        //sqlSession.insert("book.add",book);
-        bookDao.add(book);
-
-        return"redirect:/book/query";
+//---------------------------------------------------------------
+    @Autowired
+    private BookService bookService;
+//______________________________________________________________
+    @RequestMapping("create")
+    private String create(Book book){
+//        sqlSession.insert("book.add",book);
+//---------------------------------------------------
+//        bookDao.create(book);
+//----------------------------------------------------
+        bookService.create(book);
+//____________________________________________________________
+        return"redirect:/book/queryAll";
     }
-    @RequestMapping("query")
-    private String query(){
-        //request.getSession().setAttribute("books",sqlSession.selectList("book.query"));
-        request.getSession().setAttribute("books",bookDao.query());
+    @RequestMapping("queryAll")
+    private String queryAll(){
+//        request.getSession().setAttribute("books",sqlSession.selectList("book.query"));
+//---------------------------------------------------------------------------------------
+//        request.getSession().setAttribute("books",bookDao.queryAll());
+//-----------------------------------------------------------------------------------------
+        request.getSession().setAttribute("books",bookService.queryAll());
+//______________________________________________________________________________________-
         return "redirect:/home.jsp";
     }
     @RequestMapping("search/{id}")
     private String search(@PathVariable int id){
-        //request.getSession().setAttribute("book",sqlSession.selectOne("book.search",id));
-        request.getSession().setAttribute("book",bookDao.search(id));
+//        request.getSession().setAttribute("book",sqlSession.selectOne("book.search",id));
+//---------------------------------------------------------------------------------------------------
+//        request.getSession().setAttribute("book",bookDao.search(id));
+//---------------------------------------------------------------------------
+        request.getSession().setAttribute("book",bookService.search(id));
+//__________________________________________________________________________________
         return "redirect:/edit.jsp";
     }
-    @RequestMapping("update")
-    private String update(Book book){
-        //sqlSession.update("book.update",book);
-        bookDao.update(book);
-        return"redirect:/book/query";
+    @RequestMapping("modify")
+    private String modify(Book book){
+//        sqlSession.update("book.update",book);
+//--------------------------------------------------------------
+//        bookDao.modify(book);
+//---------------------------------------------------------------
+        bookService.modify(book);
+//________________________________________________________________-
+        return"redirect:/book/queryAll";
 
     }
     @RequestMapping("remove/{id}")
     private String remove(@PathVariable int id){
-        //sqlSession.delete("book.remove",id);
-        bookDao.remove(id);
-        return"redirect:/book/query";
+//        sqlSession.delete("book.remove",id);
+//-------------------------------------------------------------------
+//        bookDao.remove(id);
+//----------------------------------------------------------------------
+        bookService.remove(id);
+//___________________________________________________________________________-
+        return"redirect:/book/queryAll";
 
     }
 

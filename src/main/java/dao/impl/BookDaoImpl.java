@@ -16,12 +16,12 @@ public class BookDaoImpl implements BookDao {
     @Autowired
     private SqlSession sqlSession;
 
-    public void add(Book book) {
+    public void create(Book book) {
         sqlSession.insert("book.add",book);
 
     }
 
-    public List<Book> query() {
+    public List<Book> queryAll() {
         return sqlSession.selectList("book.query");
     }
 
@@ -29,7 +29,7 @@ public class BookDaoImpl implements BookDao {
         return sqlSession.selectOne("book.search",id);
     }
 
-    public void update(Book book) {
+    public void modify(Book book) {
         sqlSession.update("book.update",book);
 
     }
