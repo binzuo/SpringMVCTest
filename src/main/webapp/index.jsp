@@ -16,7 +16,7 @@
   <hr>
   <a href="signup.jsp">sign up</a>
   ${sessionScope.congratulation}
-  <form action="${ctx}user/login" method="post">
+  <form action="${ctx}/user/login" method="post">
     <input type="text" name="email" placeholder="邮箱"  value="xiaozuo@gamil.com"><br>
     <input type="password" name="password" placeholder="PASSWORD" value="123" ><br>
     <input type="submit" value="login">

@@ -27,7 +27,7 @@ ${sessionScope.user}
 <h1>南无日光遍照菩萨</h1>
 <h1>南无坚净信菩萨摩诃萨</h1>
 <hr>
-<form action="${ctx}book/create" method="post">
+<form action="${ctx}/book/create" method="post">
     <input type="text" name="bookTitle" placeholder="书名"><br>
     <input type="text" name="author" placeholder="作者"><br>
     <input type="text" name="publishing" placeholder="出版社"><br>
@@ -49,8 +49,8 @@ ${sessionScope.user}
             <td>${book.bookTitle}</td>
             <td>${book.author}</td>
             <td>${book.publishing}</td>
-            <td><a href="${ctx}book/search/${book.id}">修改</a></td>
-            <td><a href="${ctx}book/remove/${book.id}">删除</a></td>
+            <td><a href="${ctx}/book/search/${book.id}">修改</a></td>
+            <td><a href="${ctx}/book/remove/${book.id}">删除</a></td>
         </tr>
     </c:forEach>
 

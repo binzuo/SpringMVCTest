@@ -18,4 +18,5 @@ CREATE TABLE test.book(
 SELECT *FROM test.user;
 SELECT *FROM test.book;
 DESC test.book;
+INSERT INTO test.book VALUE (NULL ,'住户','贤二','清华');
 
