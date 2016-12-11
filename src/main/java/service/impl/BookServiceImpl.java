@@ -40,9 +40,6 @@ public class BookServiceImpl extends GenericServiceImpl<Book> implements BookSer
 //
 //    }
 //______________________________________________________________________________________________________________
-    @Autowired
-        public BookServiceImpl( GenericDao<Book> genericDao) {
-            super(genericDao);
-        }
+
 
 }

@@ -10,11 +10,12 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/12/11.
  */
-@Repository
 public class GenericDaoImpl<T>  implements GenericDao<T> {
     private String namespace; // 对应于 mapper 中 namespace 的值
+
     @Autowired
     private SqlSession sqlSession;
+
     @SuppressWarnings("unchecked")
     public GenericDaoImpl() {
 //        System.out.println("a: " + getClass());
@@ -25,31 +26,29 @@ public class GenericDaoImpl<T>  implements GenericDao<T> {
 //        System.out.println("e: " + clazz.getSimpleName());
         namespace = clazz.getSimpleName().toLowerCase().concat(".");
     }
-    @Override
+
+
+
     public void create(T t) {
         sqlSession.insert(namespace.concat("add"), t);
 
     }
 
-    @Override
     public List<T> queryAll() {
         return sqlSession.selectList(namespace.concat("query"));
     }
 
-    @Override
     public T search(int id) {
-        return sqlSession.selectOne(namespace.concat("search"), id);
+        return sqlSession.selectOne(namespace.concat("search"),id);
     }
 
-    @Override
     public void modify(T t) {
-        sqlSession.update(namespace.concat("update"), t);
+        sqlSession.update(namespace.concat("update"),t);
 
     }
 
-    @Override
     public void remove(int id) {
-        sqlSession.delete(namespace.concat("remove"), id);
+        sqlSession.delete(namespace.concat("remove"),id);
 
     }
 }
