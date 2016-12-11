@@ -3,20 +3,21 @@ package service.impl;
 
 import dao.GenericDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import service.GenericService;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/12/11.
  */
-public class GenericServiceImpl <T> implements GenericDao<T> {
-    @Autowired
+public class GenericServiceImpl <T> implements GenericService<T> {
+
 
     private GenericDao<T> genericDao;
 
-   // public GenericServiceImpl(GenericDao<T> genericDao) {
-   //     this.genericDao = genericDao;
-   // }
+    public GenericServiceImpl(GenericDao<T> genericDao) {
+        this.genericDao = genericDao;
+    }
 
     public void create(T t) {
         genericDao.create(t);
