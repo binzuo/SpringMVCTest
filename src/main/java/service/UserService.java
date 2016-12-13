@@ -5,10 +5,7 @@ import model.User;
 /**
  * Created by Administrator on 2016/12/10 0010.
  */
-public interface UserService {
-    void create(User user);
-
-    User query(String statement, User user);
+public interface UserService extends GenericService<User,Integer>{
     boolean register(User user);
 
 }

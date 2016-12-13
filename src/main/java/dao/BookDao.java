@@ -5,7 +5,7 @@ import model.Book;
 /**
  * Created by Administrator on 2016/12/10.
  */
-public interface BookDao extends GenericDao<Book> {
+public interface BookDao extends GenericDao<Book,Integer> {
   //  void create(Book book) ;
   //  List<Book> queryAll();
 //

@@ -19,9 +19,9 @@ public class BookController extends BaseController {
 //    @Autowired
 //    private SqlSession sqlSession;
 //---------------------------------------------------------
-    @Autowired
+//    @Autowired
 //    @Qualifier("bookDaoJdbcImpl")
-    private BookDao bookDao;
+//    private BookDao bookDao;
 //---------------------------------------------------------------
     @Autowired
     private BookService bookService;

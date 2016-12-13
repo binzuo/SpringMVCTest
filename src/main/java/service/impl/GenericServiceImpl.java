@@ -5,17 +5,18 @@ import dao.GenericDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import service.GenericService;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/12/11.
  */
-public class GenericServiceImpl <T> implements GenericService<T> {
+public class GenericServiceImpl <T extends Serializable,ID extends Serializable> implements GenericService<T,ID> {
 
 
-    private GenericDao<T> genericDao;
+    public GenericDao<T,ID> genericDao;
 
-    public GenericServiceImpl(GenericDao<T> genericDao) {
+    public GenericServiceImpl(GenericDao<T,ID> genericDao) {
         this.genericDao = genericDao;
     }
 
@@ -28,7 +29,17 @@ public class GenericServiceImpl <T> implements GenericService<T> {
         return genericDao.queryAll();
     }
 
-    public T search(int id) {
+    @Override
+    public T query(String statement, Object parameter) {
+        return genericDao.query(statement,parameter);
+    }
+
+    @Override
+    public List<T> queryList(String statement, Object parameter) {
+        return null;
+    }
+
+    public T search(ID id) {
         return genericDao.search(id);
     }
 
@@ -37,7 +48,7 @@ public class GenericServiceImpl <T> implements GenericService<T> {
 
     }
 
-    public void remove(int id) {
+    public void remove(ID id) {
         genericDao.remove(id);
 
     }

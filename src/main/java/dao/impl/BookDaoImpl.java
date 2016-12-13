@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * Created by Administrator on 2016/12/10.
  */
 @Repository
-public class BookDaoImpl extends GenericDaoImpl<Book> implements BookDao {
+public class BookDaoImpl extends GenericDaoImpl<Book,Integer> implements BookDao {
   //  @Autowired
   //  private SqlSession sqlSession;
 //

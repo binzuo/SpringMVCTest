@@ -13,7 +13,7 @@ import service.BookService;
  * Created by Administrator on 2016/12/10 0010.
  */
 @Service
-public class BookServiceImpl extends GenericServiceImpl<Book> implements BookService {
+public class BookServiceImpl extends GenericServiceImpl<Book,Integer> implements BookService {
     //    @Autowired
 //    private BookDao bookDao;
 //    public void create(Book book) {
@@ -42,7 +42,7 @@ public class BookServiceImpl extends GenericServiceImpl<Book> implements BookSer
 
 
     @Autowired
-  public BookServiceImpl(GenericDao<Book> genericDao) {
+  public BookServiceImpl(GenericDao<Book,Integer> genericDao) {
     super(genericDao);
 }
 

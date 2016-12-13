@@ -7,7 +7,7 @@ import model.Book;
 /**
  * Created by Administrator on 2016/12/10 0010.
  */
-public interface BookService extends GenericService<Book> {
+public interface BookService extends GenericService<Book,Integer> {
 //    void create(Book book) ;
 //    List<Book> queryAll();
 //
