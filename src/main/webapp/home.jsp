@@ -58,7 +58,7 @@ ${sessionScope.user}
 
 
 <hr>
-<a href="${ctx}user/logout">log out</a>
+<a href="${ctx}/user/logout">log out</a>
 
 
 </body>
